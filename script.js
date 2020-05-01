@@ -31,6 +31,7 @@ document.addEventListener('DOMContentLoaded', (evt) => {
       let totale_ospedalizzati = data[0].totale_ospedalizzati
       console.log(totale_ospedalizzati)
       let totale_positivi = data[0].totale_positivi
+      console.log(totale_positivi)
 
 
 //chart.js
@@ -40,9 +41,9 @@ var myChart = new Chart(ctx, {
     data: {
         labels: [tempo],
         datasets: [{
-            label: 'Popolazione Italiana',
+            label: 'Deceduti',
             data: [
-              deceduti,
+              deceduti,              
             ],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
@@ -57,6 +58,24 @@ var myChart = new Chart(ctx, {
             hoverBorderWidth: 2,
         }]
     },
+    datasets: [{
+        label: 'Dimessi guariti',
+            data: [
+              dimessi_guariti,              
+            ],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderWidth: 1,
+            borderColor:'#777',
+            hoverBorderWidth: 2,
+        }],
+    
     options: {
         title:{
             display:true,
@@ -90,12 +109,6 @@ var myChart = new Chart(ctx, {
         }
     }
 });
-
-
-
-
-
-
 
 
 
