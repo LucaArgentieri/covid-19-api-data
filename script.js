@@ -26,9 +26,9 @@ document.addEventListener('DOMContentLoaded', (evt) => {
 //chart.js
 var ctx = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(ctx, {
-    type: 'pie',
+    type: 'line',
     data: {
-        labels: ['Positivi al Covid', 'Ricoverati', 'Deceduti'],
+        labels: ['Positivi al Covid', 'Guariti', 'Deceduti'],
         datasets: [{
             label: 'Popolazione Italiana',
             data: [
