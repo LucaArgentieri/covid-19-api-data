@@ -10,6 +10,18 @@ document.addEventListener('DOMContentLoaded', (evt) => {
     , requestOptions)
     .then(response => response.json())
     .then(data => {
+    console.log(data)
+      function usageGraph() {
+        var xvals = [],
+          yvals = [],
+          yvalsEst = [];
+        for (var i = 0; i < lenght(json.data); i++) {
+          xvals[i] = formatDateMonth(new Date(json.data[i].day));
+          yvals[i] = json.data[i].km * 1;
+          yvalsEst[i] = json.analyzedData[i].estKm;
+        }
+        console.log(xvals[i])
+    }
       let tempo = data[0].data
       console.log(tempo)
       let deceduti = data[0].deceduti
@@ -35,16 +47,15 @@ document.addEventListener('DOMContentLoaded', (evt) => {
 
 
 //chart.js
-var ctx = document.getElementById('myChart').getContext('2d');
-var myChart = new Chart(ctx, {
+const ctx = document.getElementById('myChart').getContext('2d');
+const xlabels = [];
+const myChart = new Chart(ctx, {
     type: 'line',
     data: {
         labels: [tempo],
         datasets: [{
-            label: 'Deceduti',
-            data: [
-              deceduti,              
-            ],
+            label: '# of Votes',
+            data: [deceduti],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -53,53 +64,19 @@ var myChart = new Chart(ctx, {
                 'rgba(153, 102, 255, 0.2)',
                 'rgba(255, 159, 64, 0.2)'
             ],
-            borderWidth: 1,
-            borderColor:'#777',
-            hoverBorderWidth: 2,
-        }]
-    },
-    datasets: [{
-        label: 'Dimessi guariti',
-            data: [
-              dimessi_guariti,              
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
             ],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderWidth: 1,
-            borderColor:'#777',
-            hoverBorderWidth: 2,
+            borderWidth: 1
         }],
-    
+
+    },
     options: {
-        title:{
-            display:true,
-            text:'Dati Covid-19 in Italia dall\'inizio della pandemia',
-            fontSize:25
-        },
-        legend:{
-            display:true,
-            position:'right',
-            labels:{
-                fontColor:'#000'
-            }
-        },
-        layout:{
-            padding:{
-                left:50,
-                right:0,
-                bottom:0,
-                top:0
-            }
-        },
-        tooltips:{
-            enabled:true,
-        },
         scales: {
             yAxes: [{
                 ticks: {
@@ -109,8 +86,6 @@ var myChart = new Chart(ctx, {
         }
     }
 });
-
-
 
 
 
