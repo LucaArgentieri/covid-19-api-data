@@ -15,19 +15,35 @@ document.addEventListener('DOMContentLoaded', (evt) => {
     .then(data => {
     console.log(data);
 
+    var lista = {
+      tempo: [],
+      deceduti: [],
+      dimessi_guariti: [],
+      isolamento_domiciliare: [],
+      nuovi_positivi: [],
+      ricoverati_con_sintomi: [],
+      tamponi: [],
+      terapia_intensiva: [],
+      totale_casi: [],
+      totale_ospedalizzati: [],
+      totale_positivi: [],
+    }
 
-    
-      let tempo = data[0].data
-      let deceduti = data[0].deceduti
-      let dimessi_guariti = data[0].dimessi_guariti
-      let isolamento_domiciliare = data[0].isolamento_domiciliare
-      let nuovi_positivi = data[0].nuovi_positivi
-      let ricoverati_con_sintomi = data[0].ricoverati_con_sintomi
-      let tamponi = data[0].tamponi
-      let terapia_intensiva = data[0].terapia_intensiva
-      let totale_casi = data[0].totale_casi
-      let totale_ospedalizzati = data[0].totale_ospedalizzati
-      let totale_positivi = data[0].totale_positivi
+    let len = data.length;
+
+    for(let i = 0; i < len; i++) {
+        lista.tempo.push(data[i].data)
+        lista.deceduti.push(data[i].deceduti)
+        lista.dimessi_guariti.push(data[i].dimessi_guariti)
+        lista.isolamento_domiciliare.push(data[i].isolamento_domiciliare)
+        lista.nuovi_positivi.push(data[i].nuovi_positivi)
+        lista.ricoverati_con_sintomi.push(data[i].ricoverati_con_sintomi)
+        lista.tamponi.push(data[i].tamponi)
+        lista.terapia_intensiva.push(data[i].terapia_intensiva)
+        lista.totale_casi.push(data[i].totale_casi)
+        lista.totale_ospedalizzati.push(data[i].totale_ospedalizzati)
+        lista.totale_positivi.push(data[i].totale_positivi)
+    }
 
 
 
@@ -37,55 +53,58 @@ var myChart1 = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(myChart1, {
     type: 'line',
     data: {
-        labels: [tempo], //tempo
+        labels: lista.tempo, //tempo
         datasets: [{
             label:"Deceduti",
-            data: [deceduti], // categoria
+            data: lista.deceduti, // categoria
             backgroundColor: ['rgba(255, 99, 132, 0.2)',],
         },
         {
           label:"Dimessi guariti",
-          data: [dimessi_guariti], // categoria
+          data: lista.dimessi_guariti, // categoria
           backgroundColor: ['rgba(255, 99, 71, 0.5)'],
         },
         {
           label:"Isolamento domiciliare",
-          data: [isolamento_domiciliare], // categoria
+          data: lista.isolamento_domiciliare, // categoria
           backgroundColor: ['rgba(255, 99, 255, 0.5)'],
         },
-        {
-          label:"Nuovi positivi",
-          data: [nuovi_positivi], // categoria
-          backgroundColor: ['rgba(255, 172, 0, 0.5)'],
-        },
+        // {
+        //   label:"Nuovi positivi",
+        //   data: lista.nuovi_positivi, // categoria
+        //   backgroundColor: ['rgba(255, 172, 0, 0.5)'],
+        // },
         {
           label:"Ricoverati con sintomi",
-          data: [ricoverati_con_sintomi], // categoria
+          data: lista.ricoverati_con_sintomi, // categoria
           backgroundColor: ['rgba(0, 172, 0, 1)'],
         },
-        {
-          label:"Tamponi effettuati",
-          data: [tamponi], // categoria
-          backgroundColor: ['rgba(162, 0, 0, 1)'],
-        },
-        {
-          label:"Terapia intensiva",
-          data: [terapia_intensiva], // categoria
-          backgroundColor: ['rgba(162, 0, 252, 1)'],
-        },
+        // {
+        //   label:"Tamponi effettuati",
+        //   data: lista.tamponi, // categoria
+        //   backgroundColor: ['rgba(199, 0, 0, 0)'],
+        //   borderColor: [
+        //     'rgba(255, 99, 132, 1)',
+        // ],
+        // },
+        // {
+        //   label:"Terapia intensiva",
+        //   data: lista.terapia_intensiva, // categoria
+        //   backgroundColor: ['rgba(162, 0, 252, 1)'],
+        // },
         {
           label:"Casi totali",
-          data: [totale_casi], // categoria
-          backgroundColor: ['rgba(162, 144, 0, 1)'],
+          data: lista.totale_casi, // categoria
+          Color: ['rgba(162, 144, 0, 1)'],
         },
         {
           label:"Totale ospedalizzati",
-          data: [totale_ospedalizzati], // categoria
+          data: lista.totale_ospedalizzati, // categoria
           backgroundColor: ['rgba(0, 21, 164, 1)'],
         },
         {
           label:"Totale positivi",
-          data: [totale_positivi], // categoria
+          data: lista.totale_positivi, // categoria
           backgroundColor: ['rgba(0, 255, 164, 1)'],
         },
       ]
@@ -94,8 +113,9 @@ var myChart = new Chart(myChart1, {
       responsive:true,
       maintainAspectRatio: false,
       title: {
-        text: "Prova titolo",
+        text: "Situazione Italiana Covid-19 - 2020",
         display: true,
+        fontSize: 30,
       },
         scales: {
             yAxes: [{
