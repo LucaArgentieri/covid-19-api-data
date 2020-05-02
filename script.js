@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', (evt) => {
       return response.json()
     })
     .then(data => {
-    console.log(data);
 
     var lista = {
       tempo: [],
@@ -30,6 +29,9 @@ document.addEventListener('DOMContentLoaded', (evt) => {
     }
 
     let len = data.length;
+    let newDate = moment(lista.tempo).format('LL');
+    console.log(newDate)
+
 
     for(let i = 0; i < len; i++) {
         lista.tempo.push(data[i].data)
@@ -48,6 +50,7 @@ document.addEventListener('DOMContentLoaded', (evt) => {
 
 
 
+
 //chart.js
 var myChart1 = document.getElementById('myChart').getContext('2d');
 var myChart = new Chart(myChart1, {
@@ -57,17 +60,22 @@ var myChart = new Chart(myChart1, {
         datasets: [{
             label:"Deceduti",
             data: lista.deceduti, // categoria
-            backgroundColor: ['rgba(255, 99, 132, 0.2)',],
+            borderColor: ['rgba(255, 99, 132, 0.2)',],
+            fill: false,
+
         },
         {
           label:"Dimessi guariti",
           data: lista.dimessi_guariti, // categoria
-          backgroundColor: ['rgba(255, 99, 71, 0.5)'],
+          borderColor: ['rgba(255, 99, 71, 0.5)'],
+          fill: false,
+
         },
         {
           label:"Isolamento domiciliare",
           data: lista.isolamento_domiciliare, // categoria
-          backgroundColor: ['rgba(255, 99, 255, 0.5)'],
+          borderColor: ['rgba(255, 99, 255, 0.5)'],
+          fill: false,
         },
         // {
         //   label:"Nuovi positivi",
@@ -77,7 +85,8 @@ var myChart = new Chart(myChart1, {
         {
           label:"Ricoverati con sintomi",
           data: lista.ricoverati_con_sintomi, // categoria
-          backgroundColor: ['rgba(0, 172, 0, 1)'],
+          borderColor: ['rgba(0, 172, 0, 1)'],
+          fill: false,
         },
         // {
         //   label:"Tamponi effettuati",
@@ -95,17 +104,21 @@ var myChart = new Chart(myChart1, {
         {
           label:"Casi totali",
           data: lista.totale_casi, // categoria
-          Color: ['rgba(162, 144, 0, 1)'],
+          borderColor: ['rgba(162, 144, 0, 1)'],
+          fill: false,
+          
         },
         {
           label:"Totale ospedalizzati",
           data: lista.totale_ospedalizzati, // categoria
-          backgroundColor: ['rgba(0, 21, 164, 1)'],
+          borderColor: ['rgba(0, 21, 164, 1)'],
+          fill: false,
         },
         {
           label:"Totale positivi",
           data: lista.totale_positivi, // categoria
-          backgroundColor: ['rgba(0, 255, 164, 1)'],
+          borderColor	: ['rgba(0, 255, 164, 1)'],
+          fill: false,
         },
       ]
     },
