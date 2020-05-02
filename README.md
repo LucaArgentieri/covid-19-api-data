@@ -1,7 +1,7 @@
 ![](https://amblondra.esteri.it/Ambasciata_Londra/resource/img/2020/03/banner_coronavirus.jpg)
 
 
-# Situazione italiana Covid-19 anno 2020 (Personal project)
+# Situazione italiana Covid-19 anno 2020
 
 Ho voluto contribuire all'informazione riguardante il fenomeno del [virus Covid-19](https://it.wikipedia.org/wiki/COVID-19) ed accrescere le mie conoscenze riguardo JavaScript e le sue librerie.
 
