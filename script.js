@@ -52,9 +52,17 @@ document.addEventListener('DOMContentLoaded', (evt) => {
         lista.totale_casi.push(data[i].totale_casi)
         lista.totale_ospedalizzati.push(data[i].totale_ospedalizzati)
         lista.totale_positivi.push(data[i].totale_positivi)
-        console.log(lista.deceduti.pop())
-// metto dentro una variabile?
     }
+
+  document.getElementById('deceduti').innerHTML=lista.deceduti.pop()
+  document.getElementById('dimessiguariti').innerHTML=lista.deceduti.pop()
+  document.getElementById('isolamento').innerHTML=lista.deceduti.pop()
+  document.getElementById('ricoverati').innerHTML=lista.deceduti.pop()
+  document.getElementById('positivi').innerHTML=lista.deceduti.pop()
+  document.getElementById('tempo1').innerHTML=lista.tempo.pop()
+
+
+
 
 
   //chart.js
