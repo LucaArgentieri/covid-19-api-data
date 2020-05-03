@@ -52,9 +52,9 @@ document.addEventListener('DOMContentLoaded', (evt) => {
         lista.totale_casi.push(data[i].totale_casi)
         lista.totale_ospedalizzati.push(data[i].totale_ospedalizzati)
         lista.totale_positivi.push(data[i].totale_positivi)
+        console.log(lista.deceduti.pop())
+// metto dentro una variabile?
     }
-
-
 
 
   //chart.js
@@ -66,30 +66,32 @@ document.addEventListener('DOMContentLoaded', (evt) => {
           datasets: [{
               label:"Deceduti",
               data: lista.deceduti, // categoria
-              borderColor: ['rgba(255, 99, 132, 0.2)'],
+              borderColor: ['rgba(204, 0, 0, 1)'],
               fill: false,
-              pointBorderColor:'rgba(0, 0, 0, 0.5)',
-              pointBackgroundColor:'rgba(255, 99, 132, 0.2)',
+              pointBorderColor:'rgba(204, 0, 0, 1)',
+              pointBackgroundColor:'rgba(204, 0, 0, 1)',
               pointHitRadius:10,
-              pointHoverBackgroundColor:'rgba(0,0,0 ,1 )',
+              pointHoverBackgroundColor:'rgba(204, 0, 0, 1)',
           },
           {
             label:"Dimessi guariti",
             data: lista.dimessi_guariti, // categoria
-            borderColor: ['rgba(255, 99, 71, 0.5)'],
+            borderColor: ['rgba(255, 99, 255, 0.5)'],
             fill: false,
-            pointBorderColor:'rgba(0, 0, 0, 0.5)',
+            pointBorderColor:'rgba(255, 99, 255, 0.5)',
+            pointBackgroundColor:'rgba(255, 99, 255, 0.5)',
             pointHitRadius:10,
-            pointHoverBackgroundColor:'rgba(0,0,0 ,1 )',
+            pointHoverBackgroundColor:'rgba(255, 99, 255, 0.5)',
           },
           {
             label:"Isolamento domiciliare",
             data: lista.isolamento_domiciliare, // categoria
-            borderColor: ['rgba(255, 99, 255, 0.5)'],
+            borderColor: ['rgba(255, 104, 10, 1)'],
             fill: false,
-            pointBorderColor:'rgba(0, 0, 0, 0.5)',
+            pointBorderColor:'rgba(255, 104, 10, 1)',
+            pointBackgroundColor:'rgba(255, 104, 10, 1)',
             pointHitRadius:10,
-            pointHoverBackgroundColor:'rgba(0,0,0 ,1 )',
+            pointHoverBackgroundColor:'rgba(255, 104, 10, 1)',
           },
           // {
           //   label:"Nuovi positivi",
@@ -99,11 +101,12 @@ document.addEventListener('DOMContentLoaded', (evt) => {
           {
             label:"Ricoverati con sintomi",
             data: lista.ricoverati_con_sintomi, // categoria
-            borderColor: ['rgba(0, 172, 0, 1)'],
+            borderColor: ['rgba(13, 0, 255, 1)'],
             fill: false,
-            pointBorderColor:'rgba(0, 0, 0, 0.5)',
+            pointBorderColor:'rgba(13, 0, 255, 1)',
+            pointBackgroundColor:'rgba(13, 0, 255, 1)',
             pointHitRadius:10,
-            pointHoverBackgroundColor:'rgba(0,0,0 ,1 )',
+            pointHoverBackgroundColor:'rgba(13, 0, 255, 1)',
           },
           // {
           //   label:"Tamponi effettuati",
@@ -118,40 +121,49 @@ document.addEventListener('DOMContentLoaded', (evt) => {
           //   data: lista.terapia_intensiva, // categoria
           //   backgroundColor: ['rgba(162, 0, 252, 1)'],
           // },
+          // {
+          //   label:"Casi totali",
+          //   data: lista.totale_casi, // categoria
+          //   borderColor: ['rgba(162, 144, 0, 1)'],
+          //   fill: false,
+          //   pointBorderColor:'rgba(0, 0, 0, 0.5)',
+          //   pointHitRadius:10,
+          //   pointHoverBackgroundColor:'rgba(0,0,0 ,1 )',
+          // },
+          // {
+          //   label:"Totale ospedalizzati",
+          //   data: lista.totale_ospedalizzati, // categoria
+          //   borderColor: ['rgba(0, 21, 164, 1)'],
+          //   fill: false,
+          //   pointBorderColor:'rgba(0, 0, 0, 0.5)',
+          //   pointHitRadius:10,
+          //   pointHoverBackgroundColor:'rgba(0,0,0 ,1 )',
+          // },
           {
-            label:"Casi totali",
-            data: lista.totale_casi, // categoria
-            borderColor: ['rgba(162, 144, 0, 1)'],
-            fill: false,
-            pointBorderColor:'rgba(0, 0, 0, 0.5)',
-            pointHitRadius:10,
-            pointHoverBackgroundColor:'rgba(0,0,0 ,1 )',
-          },
-          {
-            label:"Totale ospedalizzati",
-            data: lista.totale_ospedalizzati, // categoria
-            borderColor: ['rgba(0, 21, 164, 1)'],
-            fill: false,
-            pointBorderColor:'rgba(0, 0, 0, 0.5)',
-            pointHitRadius:10,
-            pointHoverBackgroundColor:'rgba(0,0,0 ,1 )',
-          },
-          {
-            label:"Totale positivi",
+            label:"Positivi",
             data: lista.totale_positivi, // categoria
-            borderColor	: ['rgba(0, 255, 164, 1)'],
+            borderColor	: ['rgba(3, 204, 0, 1)'],
             fill: false,
-            pointBorderColor:'rgba(0, 0, 0, 0.5)',
+            pointBorderColor:'rgba(3, 204, 0, 1)',
+            pointBackgroundColor:'rgba(3, 204, 0, 1)',
             pointHitRadius:10,
-            pointHoverBackgroundColor:'rgba(0,0,0 ,1 )',
+            pointHoverBackgroundColor:'rgba(3, 204, 0, 1)',
           },
         ]
       },
       options: {
+        layout: {
+          padding: {
+              left: 20,
+              right: 20,
+              top: 0,
+              bottom: 0
+          },
+        },
         responsive:true,
         maintainAspectRatio: false,
         title: {
-          text: "Situazione Italiana Covid-19 - 2020",
+          text: ["Situazione Italiana Covid-19","Dati aggiornati ogni giorno alle ore 17:00"],
           display: true,
           fontSize: 30,
         },
@@ -162,7 +174,7 @@ document.addEventListener('DOMContentLoaded', (evt) => {
                   }
               }]
           }
-      }
+    }
   });
 
 
