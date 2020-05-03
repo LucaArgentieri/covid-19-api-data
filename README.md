@@ -7,7 +7,6 @@ Ho voluto contribuire all'informazione riguardante il fenomeno del [virus Covid-
 
 ###### Librerie utilizzate per il progetto : 
 - [Chart.js](https://www.chartjs.org/)
-- [Moment.js](https://momentjs.com/)
 
 ###### Fonte dati API
 - [Repo pcm-dpc/COVID-19](https://github.com/pcm-dpc/COVID-19)
