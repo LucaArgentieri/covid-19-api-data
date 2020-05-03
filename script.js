@@ -59,8 +59,16 @@ document.addEventListener('DOMContentLoaded', (evt) => {
   document.getElementById('isolamento').innerHTML=lista.deceduti.pop()
   document.getElementById('ricoverati').innerHTML=lista.deceduti.pop()
   document.getElementById('positivi').innerHTML=lista.deceduti.pop()
-  document.getElementById('tempo1').innerHTML=lista.tempo.pop()
+  document.getElementById('tempo1').innerHTML=lista.tempo.slice(-1)
 
+  
+// var array = [1,2,3,4,5,6];
+// console.log(array.slice(-1)[0]); // 6
+// It is a very neat and readable alternative to the often seen:
+
+// syntax2.js
+// var array = [1,2,3,4,5,6];
+// var val = array[array.length - 1]; // 6
 
 
 
