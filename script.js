@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', (evt) => {
   document.getElementById('isolamento').innerHTML=ultimiisolamento
   document.getElementById('ricoverati').innerHTML=ultimiricoverati
   document.getElementById('positivi').innerHTML=ultimipositivi
-  document.querySelectorAll('.tempo1').innerHTML=ultimoaggiornamento
+  document.getElementById('titolo').innerHTML=ultimoaggiornamento
 
 
 

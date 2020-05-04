@@ -11,6 +11,11 @@ body {
     height: 100vh;
     width: auto;
 }
+.title {
+    text-align: center;
+    margin-top: 50px;
+
+}
 .container_box {
     display: flex;
     justify-content: space-evenly;
@@ -30,20 +35,16 @@ body {
     margin-bottom: 30px;
 }
 .box h2 {
-    font-size: 50px;
-}
-.box span {
-    font-size: 30px;
+    font-size: 80px;
 }
 .spanstyle{
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
-    height: 40%;
+    height: 70%;
     width: auto;
 }
-
 .rosso {
     border-radius: 5px;
     background-color: rgba(204, 0, 0, 1);
