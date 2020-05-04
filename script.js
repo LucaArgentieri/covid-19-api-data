@@ -53,22 +53,22 @@ document.addEventListener('DOMContentLoaded', (evt) => {
         lista.totale_ospedalizzati.push(data[i].totale_ospedalizzati)
         lista.totale_positivi.push(data[i].totale_positivi)
     }
+    
+    let ultimideceduti = lista.deceduti[lista.deceduti.length - 1]
+    let ultimidimessiguariti = lista.dimessi_guariti[lista.dimessi_guariti.length - 1]
+    let ultimiisolamento = lista.isolamento_domiciliare[lista.isolamento_domiciliare.length - 1]
+    let ultimiricoverati = lista.ricoverati_con_sintomi[lista.ricoverati_con_sintomi.length - 1]
+    let ultimipositivi = lista.totale_positivi[lista.totale_positivi.length - 1]
+    let ultimoaggiornamento = lista.tempo[lista.tempo.length - 1]
 
-  document.getElementById('deceduti').innerHTML=lista.deceduti.pop()
-  document.getElementById('dimessiguariti').innerHTML=lista.deceduti.pop()
-  document.getElementById('isolamento').innerHTML=lista.deceduti.pop()
-  document.getElementById('ricoverati').innerHTML=lista.deceduti.pop()
-  document.getElementById('positivi').innerHTML=lista.deceduti.pop()
-  document.getElementById('tempo1').innerHTML=lista.tempo.slice(-1)
 
-  
-// var array = [1,2,3,4,5,6];
-// console.log(array.slice(-1)[0]); // 6
-// It is a very neat and readable alternative to the often seen:
+  document.getElementById('deceduti').innerHTML=ultimideceduti
+  document.getElementById('dimessiguariti').innerHTML=ultimidimessiguariti
+  document.getElementById('isolamento').innerHTML=ultimiisolamento
+  document.getElementById('ricoverati').innerHTML=ultimiricoverati
+  document.getElementById('positivi').innerHTML=ultimipositivi
+  document.querySelectorAll('.tempo1').innerHTML=ultimoaggiornamento
 
-// syntax2.js
-// var array = [1,2,3,4,5,6];
-// var val = array[array.length - 1]; // 6
 
 
 
