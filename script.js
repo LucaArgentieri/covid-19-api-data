@@ -172,17 +172,12 @@ document.addEventListener('DOMContentLoaded', (evt) => {
           padding: {
               left: 20,
               right: 20,
-              top: 0,
-              bottom: 0
+              top: 50,
+              bottom: 100,
           },
         },
         responsive:true,
         maintainAspectRatio: false,
-        title: {
-          text: ["Situazione Italiana Covid-19","Dati aggiornati ogni giorno alle ore 17:00"],
-          display: true,
-          fontSize: 30,
-        },
           scales: {
               yAxes: [{
                   ticks: {
