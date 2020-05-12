@@ -61,13 +61,31 @@ document.addEventListener('DOMContentLoaded', (evt) => {
     let ultimipositivi = lista.totale_positivi[lista.totale_positivi.length - 1]
     let ultimoaggiornamento = lista.tempo[lista.tempo.length - 1]
 
+    // Dati dell'ultimo giorno
 
-  document.getElementById('deceduti').innerHTML=ultimideceduti
-  document.getElementById('dimessiguariti').innerHTML=ultimidimessiguariti
-  document.getElementById('isolamento').innerHTML=ultimiisolamento
-  document.getElementById('ricoverati').innerHTML=ultimiricoverati
-  document.getElementById('positivi').innerHTML=ultimipositivi
+    let decedutimeno = lista.deceduti[lista.deceduti.length - 2]
+    let totdec = ultimideceduti - decedutimeno
+
+    let dimessimeno = lista.dimessi_guariti[lista.dimessi_guariti.length - 2]
+    let totdimessi = ultimidimessiguariti - dimessimeno
+
+    let isolamentomeno = lista.isolamento_domiciliare[lista.isolamento_domiciliare.length - 2]
+    let totisolamento = ultimiisolamento - isolamentomeno
+
+    let ricoveratimeno =  lista.ricoverati_con_sintomi[lista.ricoverati_con_sintomi.length - 2]
+    let totricoverati =  ultimiricoverati - ricoveratimeno
+
+    let positivimeno = lista.totale_positivi[lista.totale_positivi.length - 2]
+    let totpositivi = positivimeno - ultimipositivi
+
+  document.getElementById('deceduti').innerHTML=totdec
+  document.getElementById('dimessiguariti').innerHTML=totdimessi  
+  document.getElementById('isolamento').innerHTML=totisolamento
+  document.getElementById('ricoverati').innerHTML=totricoverati
+  document.getElementById('positivi').innerHTML=totpositivi
   document.getElementById('titolo').innerHTML=ultimoaggiornamento
+
+
 
 
 
