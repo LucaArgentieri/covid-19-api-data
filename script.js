@@ -76,14 +76,14 @@ document.addEventListener('DOMContentLoaded', (evt) => {
     let totricoverati =  ultimiricoverati - ricoveratimeno
 
     let positivimeno = lista.totale_positivi[lista.totale_positivi.length - 2]
-    let totpositivi = positivimeno - ultimipositivi
+    let totpositivi = ultimipositivi - positivimeno
 
-  document.getElementById('deceduti').innerHTML=totdec
-  document.getElementById('dimessiguariti').innerHTML=totdimessi  
-  document.getElementById('isolamento').innerHTML=totisolamento
-  document.getElementById('ricoverati').innerHTML=totricoverati
-  document.getElementById('positivi').innerHTML=totpositivi
   document.getElementById('titolo').innerHTML=ultimoaggiornamento
+  document.getElementById('deceduti').innerHTML="+" + totdec
+  document.getElementById('dimessiguariti').innerHTML="+" + totdimessi  
+  document.getElementById('isolamento').innerHTML="+" + totisolamento
+  document.getElementById('ricoverati').innerHTML="+" + totricoverati
+  document.getElementById('positivi').innerHTML="+" + totpositivi
 
 
 
