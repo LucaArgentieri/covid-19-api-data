@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', (evt) => {
   document.getElementById('dimessiguariti').innerHTML=totdimessi  
   document.getElementById('isolamento').innerHTML=totisolamento
   document.getElementById('ricoverati').innerHTML=totricoverati
-  document.getElementById('positivi').innerHTML=totpositivi
+  document.getElementById('contagiati').innerHTML=totpositivi
 
 
 
@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', (evt) => {
           //   pointHoverBackgroundColor:'rgba(0,0,0 ,1 )',
           // },
           {
-            label:"Positivi",
+            label:"Contagiati",
             data: lista.totale_positivi, // categoria
             borderColor	: ['rgba(3, 204, 0, 1)'],
             fill: false,
